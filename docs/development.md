@@ -20,6 +20,12 @@ Build a local DMG:
 ./scripts/release-dmg.sh
 ```
 
+Build and publish a prerelease from local artifacts:
+
+```bash
+./scripts/publish-release.sh
+```
+
 ## Fixed Local App Path
 
 ```text
@@ -33,17 +39,18 @@ This fixed path keeps Accessibility permission stable across rebuilds.
 The repository includes two GitHub Actions workflows:
 
 - `ci.yml`
-  Runs tests and builds on every push to `main` and every pull request.
+  Runs tests on every push to `main` and every pull request.
 - `pages.yml`
   Publishes the static download page from `docs/` to GitHub Pages.
 
-The `main` branch workflow also updates the `main-latest` prerelease and uploads:
+Releases are published locally with GitHub CLI:
 
-- `VBRecorder.dmg`
-- `VBRecorder-app.zip`
+- `scripts/publish-release.sh`
+  Builds `VBRecorder.dmg` and `VBRecorder-app.zip`, then creates or updates the
+  `main-latest` prerelease.
 
 ## Notes
 
 - CI uses `CODE_SIGNING_ALLOWED=NO`
-- CI artifacts are for verification and direct download
+- CI is only for validation
 - A fully public macOS release still benefits from proper signing and notarization

@@ -22,10 +22,16 @@ Build a local DMG:
 ./scripts/release-dmg.sh
 ```
 
+Build and publish a GitHub prerelease from local artifacts:
+
+```bash
+./scripts/publish-release.sh
+```
+
 ## Release and Download
 
-- GitHub Actions builds on every push to `main`
-- The latest prerelease asset is published under `main-latest`
+- Releases are published from local build artifacts
+- `./scripts/publish-release.sh` updates the `main-latest` prerelease by default
 - The static download page is served from GitHub Pages:
   `https://gfiutchkuub.github.io/VBRecorder/`
 
