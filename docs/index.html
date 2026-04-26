@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VBRecorder</title>
+    <style>
+      :root {
+        --bg: #f5f3ee;
+        --panel: rgba(255, 255, 255, 0.82);
+        --text: #1f1c17;
+        --muted: #6d655b;
+        --line: rgba(31, 28, 23, 0.12);
+        --accent: #0a7cff;
+        --accent-ink: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(10, 124, 255, 0.14), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(255, 167, 38, 0.12), transparent 24%),
+          linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
+      }
+
+      .wrap {
+        width: min(920px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 48px 0 72px;
+      }
+
+      .hero {
+        padding: 40px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: var(--panel);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 20px 60px rgba(31, 28, 23, 0.08);
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--muted);
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(40px, 6vw, 72px);
+        line-height: 0.96;
+        letter-spacing: -0.05em;
+      }
+
+      .lead {
+        margin: 20px 0 0;
+        max-width: 640px;
+        font-size: 18px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button-primary {
+        color: var(--accent-ink);
+        background: var(--accent);
+        box-shadow: 0 12px 30px rgba(10, 124, 255, 0.24);
+      }
+
+      .button-secondary {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid var(--line);
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+        margin-top: 24px;
+      }
+
+      .card {
+        padding: 24px;
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      .card p {
+        margin: 0;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      code {
+        padding: 2px 6px;
+        border-radius: 8px;
+        background: rgba(31, 28, 23, 0.06);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 13px;
+      }
+
+      @media (min-width: 760px) {
+        .grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="hero">
+        <p class="eyebrow">macOS Menu Bar Utility</p>
+        <h1>VBRecorder</h1>
+        <p class="lead">
+          Capture the selected word from any app and append it to a local CSV file.
+          Built for a lightweight, keyboard-first workflow.
+        </p>
+        <div class="actions">
+          <a
+            class="button button-primary"
+            href="https://github.com/gfiutchkuub/VBRecorder/releases/download/main-latest/VBRecorder.dmg"
+          >
+            Download Latest DMG
+          </a>
+          <a
+            class="button button-secondary"
+            href="https://github.com/gfiutchkuub/VBRecorder/releases/tag/main-latest"
+          >
+            View Release
+          </a>
+          <a
+            class="button button-secondary"
+            href="https://github.com/gfiutchkuub/VBRecorder"
+          >
+            View Source
+          </a>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Install</h2>
+          <p>
+            Download <code>VBRecorder.dmg</code>, drag the app into
+            <code>Applications</code>, then launch it from Finder or Spotlight.
+          </p>
+        </article>
+        <article class="card">
+          <h2>Permission</h2>
+          <p>
+            On first use, enable Accessibility for the app in System Settings so it
+            can read selected text from other apps.
+          </p>
+        </article>
+        <article class="card">
+          <h2>Storage</h2>
+          <p>
+            Words are stored in a CSV file with timestamps and rank fields for first
+            add order and recent access order.
+          </p>
+        </article>
+        <article class="card">
+          <h2>Builds</h2>
+          <p>
+            The <code>main-latest</code> prerelease is refreshed automatically by
+            GitHub Actions on every push to <code>main</code>.
+          </p>
+        </article>
+      </section>
+    </main>
+  </body>
+  </html>
