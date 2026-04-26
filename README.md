@@ -30,6 +30,11 @@ word,note,created_at,first_added_rank,last_accessed_at,recent_access_rank
 ./scripts/release-dmg.sh
 ```
 
+GitHub Actions：
+- `push main` 自动跑单测并构建一个未签名的 `Release` app artifact
+- `push main` 自动更新一个 GitHub prerelease 页面：`main-latest`
+- `pull_request` 也会跑同一套检查
+
 固定安装路径：
 
 ```text
@@ -101,6 +106,23 @@ xcodebuild build \
   -destination 'platform=macOS' \
   -derivedDataPath .build/ReleaseDerivedData
 ```
+
+## CI
+
+工作流文件：
+- `.github/workflows/ci.yml`
+
+行为：
+- `push` 到 `main` 自动执行测试和 `Release` 构建
+- 产出 `VBRecorder-app.zip` artifact
+- 上传 `VBRecorder.xcresult` 方便看测试详情
+- 自动更新 `main-latest` 这个 prerelease，便于直接下载构建产物
+
+说明：
+- CI 里用了 `CODE_SIGNING_ALLOWED=NO`，这样 GitHub 的 macOS runner 不需要你本机的签名证书也能完成检查和构建
+- 自动发布页现在上传的是 `VBRecorder-app.zip`
+- 这份自动发布产物适合验证和内部下载，不等于正式签名发布包
+- 如果后面要做正式对外发布，建议改成 `tag` 触发、签名、公证、再上传 `dmg`
 
 ## Git
 

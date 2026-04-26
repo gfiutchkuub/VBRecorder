@@ -1,0 +1,85 @@
+name: CI
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test-and-build:
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Resolve Swift Packages
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -project VBRecorder.xcodeproj \
+            -scheme VBRecorder
+
+      - name: Run Unit Tests
+        run: |
+          xcodebuild test \
+            -project VBRecorder.xcodeproj \
+            -scheme VBRecorder \
+            -destination 'platform=macOS' \
+            -only-testing:VBRecorderTests \
+            -derivedDataPath .build/DerivedData \
+            -resultBundlePath .build/TestResults/VBRecorder.xcresult \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Build Release App
+        run: |
+          xcodebuild build \
+            -project VBRecorder.xcodeproj \
+            -scheme VBRecorder \
+            -configuration Release \
+            -destination 'platform=macOS' \
+            -derivedDataPath .build/ReleaseDerivedData \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Package Build Artifact
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          ditto -c -k --sequesterRsrc --keepParent \
+            .build/ReleaseDerivedData/Build/Products/Release/VBRecorder.app \
+            dist/VBRecorder-app.zip
+
+      - name: Upload Test Result
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: VBRecorder-test-results
+          path: .build/TestResults/VBRecorder.xcresult
+
+      - name: Upload App Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: VBRecorder-app
+          path: dist/VBRecorder-app.zip
+
+      - name: Publish Main Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: main-latest
+          target_commitish: ${{ github.sha }}
+          name: VBRecorder main-latest
+          prerelease: true
+          files: dist/VBRecorder-app.zip
+          body: |
+            Automated prerelease from `main`.
+
+            Included asset:
+            - `VBRecorder-app.zip`
