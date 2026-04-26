@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "VBRecorder: Build Install Run",
+      "type": "shell",
+      "command": "./scripts/dev-build-install-run.sh",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "VBRecorder: Test",
+      "type": "shell",
+      "command": "./scripts/dev-test.sh",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "test",
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "VBRecorder: Open Installed App",
+      "type": "shell",
+      "command": "open \"$HOME/Applications/VBRecorder.app\"",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

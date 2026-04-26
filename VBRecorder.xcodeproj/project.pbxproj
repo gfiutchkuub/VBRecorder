@@ -6,15 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		999251FC2F9A785A0009D7F2 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 999251FB2F9A785A0009D7F2 /* KeyboardShortcuts */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		99791F2B2F9A444F003F3323 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99791F152F9A444C003F3323 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 99791F1C2F9A444C003F3323;
-			remoteInfo = VBRecorder;
-		};
-		99791F352F9A444F003F3323 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 99791F152F9A444C003F3323 /* Project object */;
 			proxyType = 1;
@@ -26,7 +23,6 @@
 /* Begin PBXFileReference section */
 		99791F1D2F9A444C003F3323 /* VBRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VBRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99791F2A2F9A444F003F3323 /* VBRecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VBRecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99791F342F9A444F003F3323 /* VBRecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VBRecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,11 +36,6 @@
 			path = VBRecorderTests;
 			sourceTree = "<group>";
 		};
-		99791F372F9A444F003F3323 /* VBRecorderUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = VBRecorderUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,17 +43,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				999251FC2F9A785A0009D7F2 /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		99791F272F9A444F003F3323 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99791F312F9A444F003F3323 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -77,7 +62,7 @@
 			children = (
 				99791F1F2F9A444C003F3323 /* VBRecorder */,
 				99791F2D2F9A444F003F3323 /* VBRecorderTests */,
-				99791F372F9A444F003F3323 /* VBRecorderUITests */,
+				999251FA2F9A785A0009D7F2 /* Frameworks */,
 				99791F1E2F9A444C003F3323 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,9 +72,15 @@
 			children = (
 				99791F1D2F9A444C003F3323 /* VBRecorder.app */,
 				99791F2A2F9A444F003F3323 /* VBRecorderTests.xctest */,
-				99791F342F9A444F003F3323 /* VBRecorderUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		999251FA2F9A785A0009D7F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +103,7 @@
 			);
 			name = VBRecorder;
 			packageProductDependencies = (
+				999251FB2F9A785A0009D7F2 /* KeyboardShortcuts */,
 			);
 			productName = VBRecorder;
 			productReference = 99791F1D2F9A444C003F3323 /* VBRecorder.app */;
@@ -140,29 +132,6 @@
 			productReference = 99791F2A2F9A444F003F3323 /* VBRecorderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		99791F332F9A444F003F3323 /* VBRecorderUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 99791F442F9A444F003F3323 /* Build configuration list for PBXNativeTarget "VBRecorderUITests" */;
-			buildPhases = (
-				99791F302F9A444F003F3323 /* Sources */,
-				99791F312F9A444F003F3323 /* Frameworks */,
-				99791F322F9A444F003F3323 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				99791F362F9A444F003F3323 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				99791F372F9A444F003F3323 /* VBRecorderUITests */,
-			);
-			name = VBRecorderUITests;
-			packageProductDependencies = (
-			);
-			productName = VBRecorderUITests;
-			productReference = 99791F342F9A444F003F3323 /* VBRecorderUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -180,10 +149,6 @@
 						CreatedOnToolsVersion = 26.4.1;
 						TestTargetID = 99791F1C2F9A444C003F3323;
 					};
-					99791F332F9A444F003F3323 = {
-						CreatedOnToolsVersion = 26.4.1;
-						TestTargetID = 99791F1C2F9A444C003F3323;
-					};
 				};
 			};
 			buildConfigurationList = 99791F182F9A444C003F3323 /* Build configuration list for PBXProject "VBRecorder" */;
@@ -195,6 +160,9 @@
 			);
 			mainGroup = 99791F142F9A444C003F3323;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				999251F92F9A77130009D7F2 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 99791F1E2F9A444C003F3323 /* Products */;
 			projectDirPath = "";
@@ -202,7 +170,6 @@
 			targets = (
 				99791F1C2F9A444C003F3323 /* VBRecorder */,
 				99791F292F9A444F003F3323 /* VBRecorderTests */,
-				99791F332F9A444F003F3323 /* VBRecorderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,13 +183,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		99791F282F9A444F003F3323 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99791F322F9A444F003F3323 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,13 +206,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99791F302F9A444F003F3323 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -260,11 +213,6 @@
 			isa = PBXTargetDependency;
 			target = 99791F1C2F9A444C003F3323 /* VBRecorder */;
 			targetProxy = 99791F2B2F9A444F003F3323 /* PBXContainerItemProxy */;
-		};
-		99791F362F9A444F003F3323 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 99791F1C2F9A444C003F3323 /* VBRecorder */;
-			targetProxy = 99791F352F9A444F003F3323 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -395,12 +343,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_APP_SANDBOX = YES;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
+					DEVELOPMENT_TEAM = 56BQ3HT43H;
+					ENABLE_APP_SANDBOX = NO;
+					ENABLE_PREVIEWS = YES;
+					ENABLE_USER_SELECTED_FILES = readwrite;
+					GENERATE_INFOPLIST_FILE = YES;
+					INFOPLIST_KEY_LSUIElement = YES;
+					INFOPLIST_KEY_NSHumanReadableCopyright = "";
+					LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
@@ -425,12 +375,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_APP_SANDBOX = YES;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
+					DEVELOPMENT_TEAM = 56BQ3HT43H;
+					ENABLE_APP_SANDBOX = NO;
+					ENABLE_PREVIEWS = YES;
+					ENABLE_USER_SELECTED_FILES = readwrite;
+					GENERATE_INFOPLIST_FILE = YES;
+					INFOPLIST_KEY_LSUIElement = YES;
+					INFOPLIST_KEY_NSHumanReadableCopyright = "";
+					LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
@@ -453,6 +405,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56BQ3HT43H;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.3;
 				MARKETING_VERSION = 1.0;
@@ -473,6 +426,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56BQ3HT43H;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.3;
 				MARKETING_VERSION = 1.0;
@@ -484,42 +438,6 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VBRecorder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VBRecorder";
-			};
-			name = Release;
-		};
-		99791F452F9A444F003F3323 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiaqia.VBRecorderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = VBRecorder;
-			};
-			name = Debug;
-		};
-		99791F462F9A444F003F3323 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiaqia.VBRecorderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = VBRecorder;
 			};
 			name = Release;
 		};
@@ -553,16 +471,26 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99791F442F9A444F003F3323 /* Build configuration list for PBXNativeTarget "VBRecorderUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				99791F452F9A444F003F3323 /* Debug */,
-				99791F462F9A444F003F3323 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		999251F92F9A77130009D7F2 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		999251FB2F9A785A0009D7F2 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 999251F92F9A77130009D7F2 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 99791F152F9A444C003F3323 /* Project object */;
 }

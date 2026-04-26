@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1024" height="1024">
+  <defs>
+    <!-- 极其柔和的 Mac 基础阴影 -->
+    <filter id="mac-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- 1. 纯白底板 (Squircle，代表极简的纸张/卡片) -->
+  <rect x="46" y="46" width="420" height="420" rx="96" fill="#FFFFFF" filter="url(#mac-shadow)"/>
+  
+  <!-- 微妙的浅灰边框，确保图标在白色背景的 Dock 栏上边界清晰 -->
+  <rect x="46" y="46" width="420" height="420" rx="96" fill="none" stroke="#E5E5EA" stroke-width="2"/>
+
+  <!-- 2. 核心意象：经典衬线体 Aa (代表词汇) -->
+  <!-- 故意将 X 轴设为 240 (稍微偏左)，以平衡右上角加号的视觉比重 -->
+  <text x="240" y="325" font-family="'Georgia', 'Times New Roman', serif" font-size="180" font-weight="bold" fill="#1D1D1F" text-anchor="middle" letter-spacing="-2">Aa</text>
+
+  <!-- 3. 功能暗示：悬浮的极简“➕”号 (代表随地添加) -->
+  <g transform="translate(370, 160)">
+    <!-- 采用 Apple 系统蓝作为唯一的视觉跳跃点 -->
+    <path d="M -20 0 L 20 0 M 0 -20 L 0 20" stroke="#007AFF" stroke-width="10" stroke-linecap="round"/>
+  </g>
+</svg>

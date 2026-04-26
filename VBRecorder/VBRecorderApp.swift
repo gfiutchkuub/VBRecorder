@@ -1,17 +1,12 @@
-//
-//  VBRecorderApp.swift
-//  VBRecorder
-//
-//  Created by qiaqia on 2026/4/23.
-//
-
 import SwiftUI
 
 @main
 struct VBRecorderApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        Settings {
+            SettingsView()
         }
     }
 }
