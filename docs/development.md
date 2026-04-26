@@ -36,10 +36,8 @@ This fixed path keeps Accessibility permission stable across rebuilds.
 
 ## CI and Release
 
-The repository includes two GitHub Actions workflows:
+The repository keeps one GitHub Actions workflow:
 
-- `ci.yml`
-  Runs tests on every push to `main` and every pull request.
 - `pages.yml`
   Publishes the static download page from `docs/` to GitHub Pages.
 
@@ -51,6 +49,5 @@ Releases are published locally with GitHub CLI:
 
 ## Notes
 
-- CI uses `CODE_SIGNING_ALLOWED=NO`
-- CI is only for validation
+- GitHub Actions are only used for the Pages site
 - A fully public macOS release still benefits from proper signing and notarization
